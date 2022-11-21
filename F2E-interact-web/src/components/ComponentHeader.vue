@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <header class="bg-header pt-[39px] pb-[1px] pr-[30px] fixed top-0 left-0 w-full">
+  <header class="bg-header pt-[39px] pb-[1px] pr-[30px] fixed top-0 left-0 w-full z-10">
     <div class="container mx-auto">
       <div class="flex justify-between">
         <div class="flex items-end">

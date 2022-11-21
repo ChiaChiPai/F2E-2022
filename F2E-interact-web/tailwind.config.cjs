@@ -8,10 +8,13 @@ module.exports = {
     extend: {
       colors: {
         header: '#3DA9FC',
-        footer: 'rgba(239, 69, 101, 0.9)'
+        footer: 'rgba(239, 69, 101, 0.9)',
+        primary: '#BAE8E8',
+        secondary: '#E3F6F5'
       },
       backgroundImage: {
-        'index-background': "url('@/assets/images/index-background.png')"
+        'grid-background': "url('@/assets/images/grid-background.png')",
+        monitor_girl: "url('@/assets/images/monitor_girl.png')"
       }
     }
   },

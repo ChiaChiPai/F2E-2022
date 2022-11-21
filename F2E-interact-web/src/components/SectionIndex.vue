@@ -24,7 +24,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section id="index_page" class="h-screen overflow-hidden flex relative">
+  <section id="index_page" class="bg-grid-background h-screen overflow-hidden flex relative">
     <img src="@/assets/images/index-title.png" class="absolute top-[17.5%] left-1/2 transform -translate-x-1/2" alt="">
     <div>
       <img src="@/assets/images/index-monitor.png" class="absolute bottom-[12.5%] right-[16.5%] w-[18.82%]" alt="">

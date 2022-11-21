@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <header class="bg-footer fixed bottom-0 left-0 right-0">
+  <header class="bg-footer fixed bottom-0 left-0 right-0 z-10">
     <div class="container mx-auto text-center text-white text-[40px] font-bold leading-[56px]">
       立即報名
     </div>

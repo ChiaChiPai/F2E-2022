@@ -5,8 +5,13 @@
 <template>
   <div>
     <ComponentHeader />
-    <ComponentIndex />
     <ComponentSignUp />
+    <SectionIndex />
+    <SectionQuestion />
+    <SectionInteractWeb />
+    <SectionLevel />
+    <SectionActivity />
+    <SectionAward />
   </div>
 </template>
 
