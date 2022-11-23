@@ -1,4 +1,15 @@
-<script setup></script>
+<script setup>
+import { onMounted } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+onMounted(() => {
+  setTimeout(() => {
+    router.push({ name: "index" });
+  }, 3000);
+});
+</script>
 
 <template>
   <div class="">
@@ -17,12 +28,12 @@
       />
       <img
         src="@/assets/animations/clock.gif"
-        class="top-[43vw] left-[6.25vw]"
+        class="bottom-[-17vw] left-[6.25vw]"
         alt=""
       />
       <img
         src="@/assets/animations/clock.gif"
-        class="top-[-9vw] right-[6.25vw]"
+        class="top-[-11.5vw] right-[6.25vw]"
         alt=""
       />
       <img
@@ -39,13 +50,13 @@
       />
       <img
         src="@/assets/animations/clock.gif"
-        class="right-[18vw] bottom-[6vw]"
+        class="right-[18vw] bottom-[1.8vw]"
         alt=""
       />
     </div>
     <img
       src="@/assets/images/loading.png"
-      class="absolute left-1/2 bottom-[14.7812vw] transform -translate-x-1/2"
+      class="absolute left-1/2 bottom-[10.7812vw] transform -translate-x-1/2"
       alt=""
     />
   </div>
