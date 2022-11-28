@@ -4,6 +4,7 @@ import indexPage from "../views/indexPage.vue";
 import welcomePage from "../views/welcomePage.vue";
 import introducePage from "../views/introducePage.vue";
 import productBacklog from "../views/productBacklog.vue";
+import meetingPage from "../views/meetingPage.vue";
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -32,6 +33,11 @@ const router = createRouter({
       path: "/product-backlog",
       name: "productBacklog",
       component: productBacklog,
+    },
+    {
+      path: "/meeting",
+      name: "meeting",
+      component: meetingPage,
     },
   ],
 });

@@ -1,45 +1,97 @@
 <script setup>
 import gsap from "@/utils/gsap.js";
-import { onMounted } from "vue";
+import Sortable from "sortablejs";
+import { onMounted, ref, reactive } from "vue";
+import { useRouter } from "vue-router";
 
-onMounted(() => {
-  initializeDragging();
-  doAnimate();
-});
+const router = useRouter();
+let order = reactive([]);
+let isShowDone = ref(false);
+const animation = gsap.timeline();
+const candidateRef = ref(null);
+
+const doAnimate = () => {
+  animation.to(".notice", { x: 0, duration: 1 });
+  animation.to(".ipad", { duration: 1.5 });
+  animation.to(".po", { opacity: 0, duration: 1 });
+  animation.to(".ipad", { rotation: 0, duration: 1 }, "<");
+};
 
 const initializeDragging = () => {
-  const candidate = document.querySelector(".candidate");
-  const panelAnswer = document.querySelector(".panel_answer");
-  let dragging = null;
-  candidate.addEventListener("dragstart", (event) => {
-    dragging = event.target;
+  const candidateDOM = document.querySelector(".candidate");
+  const panelAnswerDOM = document.querySelector(".panel_answer");
+  // let dragging = null;
+  const candidate = Sortable.create(candidateDOM, {
+    group: "backlog",
+    animation: 500,
+    onAdd() {
+      isShowDone.value = false;
+    },
+    onEnd() {
+      if (candidate.toArray().length <= 0) {
+        isShowDone.value = true;
+      }
+    },
   });
-  panelAnswer.addEventListener("dragover", (event) => {
-    console.log(event);
-    panelAnswer.appendChild(dragging);
-  });
-  panelAnswer.addEventListener("dragstart", (event) => {
-    dragging = event.target;
-  });
-  candidate.addEventListener("dragover", () => {
-    candidate.appendChild(dragging);
+
+  const panelAnswer = Sortable.create(panelAnswerDOM, {
+    group: "backlog",
+    animation: 500,
+    onAdd() {
+      order = panelAnswer.toArray();
+    },
+    onUpdate() {
+      order = panelAnswer.toArray();
+    },
   });
 };
 
-const doAnimate = () => {
-  const animation = gsap.timeline();
-  animation(".ipad", { rotation: -12, duration: 1 });
+onMounted(() => {
+  doAnimate();
+  initializeDragging();
+  if (candidateRef.value.childElementCount === 0) {
+    isShowDone.value = true;
+  }
+});
+
+const clickDone = () => {
+  if (order.join("") === "1234") {
+    router.push({ name: "meeting" });
+  } else {
+    animation.fromTo(
+      ".panel_answer img",
+      { rotation: -1.5 },
+      { rotation: 1.5, ease: "none", duration: 0.15 }
+    );
+    animation.fromTo(
+      ".panel_answer img",
+      { rotation: 1.5 },
+      { rotation: -1.5, ease: "none", duration: 0.15 }
+    );
+    animation.fromTo(
+      ".panel_answer img",
+      { rotation: -1.5 },
+      { rotation: 1.5, ease: "none", duration: 0.15 }
+    );
+    animation.fromTo(
+      ".panel_answer img",
+      { rotation: 1.5 },
+      { rotation: 0, ease: "none", duration: 0.15 }
+    );
+  }
 };
 </script>
 
 <template>
   <div class="pt-[1vw]">
-    <h2 class="text-white text-[1.5625vw] text-center">
+    <h2
+      class="notice text-white text-[1.5625vw] text-center transform translate-x-full"
+    >
       請把需求放到產品待辦清單，並調整待辦的優先度順序。
     </h2>
     <img
       src="@/assets/images/po_left.png"
-      class="w-[27.08vw] h-[30.2vw] absolute top-[2vw] right-[2.291vw]"
+      class="po w-[27.08vw] h-[30.2vw] absolute top-[2vw] right-[2.291vw]"
       alt=""
     />
     <div
@@ -56,29 +108,40 @@ const doAnimate = () => {
       <h4 class="text-[1.5625vw]">
         產品待辦清單 <span class="text-[1.0416vw]">(Product Backlog)</span>
       </h4>
-      <div class="candidate">
+      <img
+        v-if="isShowDone"
+        @click="clickDone"
+        src="@/assets/images/done.png"
+        class="absolute left-[28%] top-[45%] hover:scale-[1.1] cursor-pointer"
+        alt=""
+      />
+      <div class="candidate" ref="candidateRef">
         <img
           draggable="true"
-          class="w-[14.375vw] h-[6.25vw]"
+          class="w-[13.33333vw] h-[5.416667vw]"
           src="@/assets/images/answer-1.png"
+          data-id="1"
           alt=""
         />
         <img
           draggable="true"
-          class="w-[14.375vw] h-[6.25vw]"
+          class="w-[13.33333vw] h-[5.416667vw]"
           src="@/assets/images/answer-2.png"
+          data-id="2"
           alt=""
         />
         <img
           draggable="true"
-          class="w-[14.375vw] h-[6.25vw]"
+          class="w-[13.33333vw] h-[5.416667vw]"
           src="@/assets/images/answer-3.png"
+          data-id="3"
           alt=""
         />
         <img
           draggable="true"
-          class="w-[14.375vw] h-[6.25vw]"
+          class="w-[13.33333vw] h-[5.416667vw]"
           src="@/assets/images/answer-4.png"
+          data-id="4"
           alt=""
         />
       </div>
@@ -106,15 +169,15 @@ const doAnimate = () => {
   @apply absolute left-[27.65vw] top-[43.3333vw];
 }
 .panel_answer img:nth-child(1) {
-  @apply absolute left-[2.76vw] top-[3.645vw];
+  @apply absolute left-[2.76vw] top-[3.645vw] w-[14.375vw] h-[6.25vw];
 }
 .panel_answer img:nth-child(2) {
-  @apply absolute left-[2.76vw] top-[11.145vw];
+  @apply absolute left-[2.76vw] top-[11.145vw] w-[14.375vw] h-[6.25vw];
 }
 .panel_answer img:nth-child(3) {
-  @apply absolute left-[2.76vw] top-[18.645vw];
+  @apply absolute left-[2.76vw] top-[18.645vw] w-[14.375vw] h-[6.25vw];
 }
 .panel_answer img:nth-child(4) {
-  @apply absolute left-[2.76vw] top-[26.145vw];
+  @apply absolute left-[2.76vw] top-[26.145vw] w-[14.375vw] h-[6.25vw];
 }
 </style>
