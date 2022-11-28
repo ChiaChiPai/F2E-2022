@@ -1,4 +1,11 @@
-<script setup></script>
+<script setup>
+import { onMounted } from "vue";
+import gsap from "@/utils/gsap.js";
+
+onMounted(() => {
+  gsap.to(".ipad", { scale: 1.15, y: "-34%", duration: 1 });
+});
+</script>
 
 <template>
   <div>
@@ -8,7 +15,7 @@
       alt=""
     />
     <div
-      class="bg-twoHandsIpad w-[75vw] h-[56.25vw] absolute left-0 bottom-[-21vw]"
+      class="ipad bg-twoHandsIpad w-[75vw] h-[56.25vw] absolute left-0 bottom-[-21vw]"
     >
       <p
         class="text-[2.083vw] text-center text-primary absolute left-1/2 transform -translate-x-1/2 top-[21vw]"
@@ -16,11 +23,13 @@
         Welcome to TT 資訊<br />， 在加入我們之前，請先<br />了解 Scrum
         的精神並通過任務!
       </p>
-      <img
-        src="@/assets/images/accept.png"
-        class="absolute left-1/2 transform -translate-x-1/2 top-[37vw]"
-        alt=""
-      />
+      <router-link to="/introduce">
+        <img
+          src="@/assets/images/accept.png"
+          class="absolute left-1/2 transform -translate-x-1/2 top-[37vw] hover:scale-[1.1]"
+          alt=""
+        />
+      </router-link>
     </div>
   </div>
 </template>

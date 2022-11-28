@@ -1,7 +1,13 @@
 <script setup>
+import gsap from "@/utils/gsap.js";
 import { onMounted } from "vue";
 
 onMounted(() => {
+  initializeDragging();
+  doAnimate();
+});
+
+const initializeDragging = () => {
   const candidate = document.querySelector(".candidate");
   const panelAnswer = document.querySelector(".panel_answer");
   let dragging = null;
@@ -18,7 +24,12 @@ onMounted(() => {
   candidate.addEventListener("dragover", () => {
     candidate.appendChild(dragging);
   });
-});
+};
+
+const doAnimate = () => {
+  const animation = gsap.timeline();
+  animation(".ipad", { rotation: -12, duration: 1 });
+};
 </script>
 
 <template>
@@ -32,7 +43,7 @@ onMounted(() => {
       alt=""
     />
     <div
-      class="origin-bottom-left rotate-[22deg] pt-[16.6667vw] pl-[18.9062vw] text-primary bg-productBacklog w-[84.98vw] h-[63.72vw] bg-cover absolute bottom-[-7.5vw] left-[-5vw]"
+      class="ipad origin-bottom-left rotate-[22deg] pt-[16.6667vw] pl-[18.9062vw] text-primary bg-productBacklog w-[84.98vw] h-[63.72vw] bg-cover absolute bottom-[-7.5vw] left-[-5vw]"
     >
       <img
         src="@/assets/icon/icon_question.png"
