@@ -46,7 +46,7 @@ const doAnimate = () => {
       class="ipad origin-bottom-left rotate-[22deg] pt-[16.6667vw] pl-[18.9062vw] text-primary bg-productBacklog w-[84.98vw] h-[63.72vw] bg-cover absolute bottom-[-7.5vw] left-[-5vw]"
     >
       <img
-        src="@/assets/icon/icon_question.png"
+        src="@/assets/icon/icon_question.svg"
         class="w-[2.5vw] h-[2.5vw] absolute top-[14.21vw] right-[15.9375vw]"
         alt=""
       />
