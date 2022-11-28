@@ -20,6 +20,7 @@ module.exports = {
       },
       textColor: {
         primary: "#454545",
+        secondary: "#9E9D9C",
       },
     },
   },

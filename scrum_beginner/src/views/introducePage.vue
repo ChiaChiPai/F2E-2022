@@ -73,13 +73,3 @@ const reload = () => {
     </DialogBlock>
   </div>
 </template>
-
-<style scoped lang="postcss">
-.triangle {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 1.302vw 0.78125vw 0 0.78125vw;
-  border-color: #000 transparent transparent transparent;
-}
-</style>

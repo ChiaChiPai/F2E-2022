@@ -56,7 +56,7 @@ onMounted(() => {
 
 const clickDone = () => {
   if (order.join("") === "1234") {
-    router.push({ name: "meeting" });
+    router.push({ name: "team" });
   } else {
     animation.fromTo(
       ".panel_answer img",
