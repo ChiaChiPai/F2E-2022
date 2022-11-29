@@ -5,6 +5,7 @@ import welcomePage from "../views/welcomePage.vue";
 import introducePage from "../views/introducePage.vue";
 import productBacklog from "../views/productBacklog.vue";
 import teamPage from "../views/teamPage.vue";
+import sprintPoint from "../views/sprintPoint.vue";
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -38,6 +39,11 @@ const router = createRouter({
       path: "/team",
       name: "team",
       component: teamPage,
+    },
+    {
+      path: "/sprint-point",
+      name: "sprintPoint",
+      component: sprintPoint,
     },
   ],
 });
