@@ -7,9 +7,11 @@ module.exports = {
         primary: "#454545",
       },
       backgroundImage: {
+        oneHandsIpad: "url('@/assets/images/one_hand_ipad.png')",
         twoHandsIpad: "url('@/assets/images/two_hands_ipad.png')",
         productBacklog: "url('@/assets/images/one_hand_ipad.png')",
         backlogPanel: "url('@/assets/images/backlog-panel.png')",
+        sprintBlock: "url('@/assets/images/sprint_block.png')",
         block1: "url('@/assets/images/block-1.png')",
         block2: "url('@/assets/images/block-2.png')",
         block3: "url('@/assets/images/block-3.png')",

@@ -20,7 +20,6 @@ const doAnimate = () => {
 const initializeDragging = () => {
   const candidateDOM = document.querySelector(".candidate");
   const panelAnswerDOM = document.querySelector(".panel_answer");
-  // let dragging = null;
   const candidate = Sortable.create(candidateDOM, {
     group: "backlog",
     animation: 500,

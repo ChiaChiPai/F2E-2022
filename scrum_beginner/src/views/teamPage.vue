@@ -150,7 +150,7 @@ const goNextPage = () => {
         v-if="!isShowNextStep"
         @click="reload"
         src="@/assets/icon/icon_refresh.svg"
-        class="absolute right-[5.052vw] bottom-[4.114vw] cursor-pointer z-10"
+        class="absolute right-[5.052vw] bottom-[4.114vw] cursor-pointer z-10 w-[2.5vw]"
         alt=""
       />
       <div

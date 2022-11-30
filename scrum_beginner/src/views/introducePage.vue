@@ -67,7 +67,7 @@ const reload = () => {
         v-if="!isShowNext"
         @click="reload"
         src="@/assets/icon/icon_refresh.svg"
-        class="absolute right-[5.052vw] bottom-[4.114vw] cursor-pointer"
+        class="absolute right-[5.052vw] bottom-[4.114vw] cursor-pointer w-[2.5vw]"
         alt=""
       />
     </DialogBlock>
