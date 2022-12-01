@@ -158,7 +158,7 @@ const checkout = () => {
       <img
         v-if="isShowGo"
         src="@/assets/images/go_arrow.png"
-        class="absolute right-[10vw] top-[23vw]"
+        class="absolute right-[10vw] top-[23vw] w-[14.27vw]"
         @click="checkout"
         alt=""
       />

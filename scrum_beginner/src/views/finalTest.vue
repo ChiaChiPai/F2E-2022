@@ -41,7 +41,7 @@ onMounted(() => {
 });
 
 const nextTasks = () => {
-  animation.to(".board", { y: "-900", duration: 1.5 });
+  animation.to(".board", { y: "-46.87vw", duration: 1.5 });
 };
 
 const clickDone = () => {
@@ -75,7 +75,7 @@ const clickDone = () => {
       alt=""
     />
     <DialogBlock :height="80.208" :padding-top="0" class="absolute top-[28vw]">
-      <img src="@/assets/images/final.png" class="mx-auto" alt="" />
+      <img src="@/assets/images/final.png" class="mx-auto w-[14.27vw]" alt="" />
       <p class="text-center mt-[-2vw] mb-[2vw]">
         Sprint 流程記憶大考驗<br />把貼紙貼到對應的格子內，全部正確才會出現提交按鈕！
       </p>
@@ -100,7 +100,7 @@ const clickDone = () => {
         v-if="isShowSubmit"
         @click="clickDone"
         src="@/assets/images/submit.png"
-        class="absolute left-1/2 transform -translate-x-1/2 bottom-[17vw]"
+        class="absolute left-1/2 transform -translate-x-1/2 bottom-[17vw] w-[6.51vw]"
         alt=""
       />
     </DialogBlock>

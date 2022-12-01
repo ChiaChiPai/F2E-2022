@@ -111,7 +111,7 @@ const clickDone = () => {
         v-if="isShowDone"
         @click="clickDone"
         src="@/assets/images/done.png"
-        class="absolute left-[28%] top-[45%] hover:scale-[1.1] cursor-pointer"
+        class="absolute left-[28%] top-[45%] hover:scale-[1.1] cursor-pointer w-[14.27vw]"
         alt=""
       />
       <div class="candidate" ref="candidateRef">

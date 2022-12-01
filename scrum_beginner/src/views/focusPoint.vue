@@ -53,7 +53,7 @@ const resetAnimation = () => {
     >
       <img
         src="@/assets/images/stars.png"
-        class="absolute right-[5.9vw] top-[2vw] width-[5.416667vw]"
+        class="absolute right-[5.9vw] top-[2vw] width-[5.416667vw] w-[5.416667vw]"
         alt=""
       />
       <img

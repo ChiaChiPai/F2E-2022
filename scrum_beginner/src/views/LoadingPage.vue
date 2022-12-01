@@ -56,7 +56,7 @@ onMounted(() => {
     </div>
     <img
       src="@/assets/images/loading.png"
-      class="absolute left-1/2 bottom-[10.7812vw] transform -translate-x-1/2"
+      class="absolute left-1/2 bottom-[10.7812vw] transform -translate-x-1/2 w-[8.802vw]"
       alt=""
     />
   </div>

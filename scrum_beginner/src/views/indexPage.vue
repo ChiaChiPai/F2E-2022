@@ -26,7 +26,9 @@ onMounted(() => {
       <div class="mt-[2.5vw] w-[27.76vw]">
         <img src="@/assets/images/village.png" alt="" />
       </div>
-      <p class="text-[#E6E6E6] opacity-[0.6] mt-[13.9vw]">design by Rong</p>
+      <p class="text-[#E6E6E6] opacity-[0.6] mt-[13.9vw] text-[1vw]">
+        design by Rong
+      </p>
     </div>
     <img
       src="@/assets/images/po.png"

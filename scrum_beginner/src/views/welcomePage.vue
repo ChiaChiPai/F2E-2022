@@ -28,7 +28,7 @@ onMounted(() => {
       <router-link to="/introduce">
         <img
           src="@/assets/images/accept.png"
-          class="absolute left-1/2 transform -translate-x-1/2 top-[37vw] hover:scale-[1.1]"
+          class="absolute left-1/2 transform -translate-x-1/2 top-[37vw] hover:scale-[1.1] w-[14.27vw]"
           alt=""
         />
       </router-link>
