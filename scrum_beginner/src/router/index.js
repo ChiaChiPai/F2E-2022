@@ -7,6 +7,8 @@ import productBacklog from "../views/productBacklog.vue";
 import teamPage from "../views/teamPage.vue";
 import sprintPoint from "../views/sprintPoint.vue";
 import focusPoint from "../views/focusPoint.vue";
+import finalTest from "../views/finalTest.vue";
+import endPage from "../views/endPage.vue";
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -50,6 +52,16 @@ const router = createRouter({
       path: "/focus-point",
       name: "focusPoint",
       component: focusPoint,
+    },
+    {
+      path: "/final-test",
+      name: "finalTest",
+      component: finalTest,
+    },
+    {
+      path: "/end",
+      name: "endPage",
+      component: endPage,
     },
   ],
 });

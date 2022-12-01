@@ -3,7 +3,9 @@ import { onMounted } from "vue";
 import gsap from "@/utils/gsap.js";
 
 onMounted(() => {
-  gsap.to(".ipad", { scale: 1.15, y: "-34%", duration: 1 });
+  setTimeout(() => {
+    gsap.to(".ipad", { scale: 1.15, y: "-34%", duration: 1 });
+  }, 1500);
 });
 </script>
 

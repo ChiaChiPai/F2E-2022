@@ -12,6 +12,7 @@ module.exports = {
         productBacklog: "url('@/assets/images/one_hand_ipad.png')",
         backlogPanel: "url('@/assets/images/backlog-panel.png')",
         sprintBlock: "url('@/assets/images/sprint_block.png')",
+        sprintProgress: "url('@/assets/images/sprint_progress.png')",
         block1: "url('@/assets/images/block-1.png')",
         block2: "url('@/assets/images/block-2.png')",
         block3: "url('@/assets/images/block-3.png')",
