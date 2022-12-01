@@ -2,7 +2,7 @@
 
 <template>
   <section
-    class="bg-primary w-[75vw] h-[53.33333vw] max-h-screen fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden"
+    class="bg-primary md:w-[75vw] md:h-[53.33333vw] w-[100vw] h-[71.111vw] max-h-screen fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden"
   >
     <RouterView />
   </section>
